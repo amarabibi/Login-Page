@@ -1,13 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from "./dashboard_login/login";
 import StudentsPage from "./dashboard_login/dashboard";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <StudentsPage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/students" element={<StudentsPage />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
